@@ -74,8 +74,12 @@ public class Weather implements Serializable{
             JsonObject sysObj = o.getJsonObject("sys");
             w.setSunriseTimeStamp(sysObj.getJsonNumber("sunrise").longValue());
             w.setSunsetTimeStamp(sysObj.getJsonNumber("sunrise").longValue());
-
+            w.conditions = o.getJsonArray("weather").stream()
+                            .map(v -> (JsonObject)v)
+                            .map(v -> Conditions.createJson(v))
+                            .toList();
         }
+        return w;
     }
 
     // "sys": {
