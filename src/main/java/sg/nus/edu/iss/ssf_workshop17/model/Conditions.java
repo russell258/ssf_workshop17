@@ -24,6 +24,7 @@ public class Conditions implements Serializable{
         this.icon = icon;
     }
 
+    //get main, description, icon
     public static Conditions createJson(JsonObject j){
         Conditions c = new Conditions();
         c.description = "%s - %s"
