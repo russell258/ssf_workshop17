@@ -1,6 +1,7 @@
 package sg.nus.edu.iss.ssf_workshop17.service;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import sg.nus.edu.iss.ssf_workshop17.model.Weather;
 
 @Service
-public class WeatherService {
+public class WeatherService implements Serializable{
     
     @Value("${ssf_workshop17.open.weather.url}")
     private String openWeatherUrl;
@@ -30,6 +31,13 @@ public class WeatherService {
                                                 .queryParam("units", unitMeasurement)
                                                 .queryParam("appId", openWeatherApiKey)
                                                 .toUriString();
+        
+        System.out.println(weatherUrl);
+        System.out.println(weatherUrl);
+        System.out.println(weatherUrl);
+        System.out.println(weatherUrl);
+        System.out.println(weatherUrl);
+        System.out.println(weatherUrl);
         
         //below method vs day 17 slide 6?
         RestTemplate template = new RestTemplate();

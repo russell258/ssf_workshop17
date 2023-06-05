@@ -20,10 +20,10 @@
         <p data-th-text="*{#dates.format(weatherTimeStamp*1000,'dd-MM-yyyy HH:mm:ss')}"></p>
         <br>
         Sunrise Date Time:
-        <p data-th-text="*{#dates.format(sunriseTimeStamp)*1000, 'dd-MM-yyyy HH:mm:ss')}"></p>
+        <p data-th-text="*{#dates.format(sunriseTimeStamp*1000, 'dd-MM-yyyy HH:mm:ss')}"></p>
         <br>
         Sunset Date Time:
-        <p data-th-text="*{sunsetTimeStamp}"></p>
+        <!-- <p data-th-text="*{sunsetTimeStamp}"></p> -->
         <p data-th-text="*{#dates.format(sunsetTimeStamp * 1000 , 'dd-MM-yyyy HH:mm:ss')}"></p>
 
     </div>
